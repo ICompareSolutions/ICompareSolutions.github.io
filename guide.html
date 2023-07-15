@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- @note the lang property helps screen readers know what language the content is in -->
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Slides to HTML</title>
+</head>
+<body>
+
+	<main>
+
+		<!--
+
+			@note Guiding Principles
+
+			1. Every element should have a general class for the content type AND a unique ID for the specific element. This lets developers hook into things in a variety of ways to give maximum control.
+
+			2. Each slide should have a wrapper element. Each wrapper element should have two child elements: one for the slide image, and the other for text/notes. This allows developers to style things as a single column OR side-by side.
+
+			3. By combining nested elements with the class approach above, developers can do lots of unique things with styling, including unique layouts using CSS Grid.
+
+			4. Don't wrap entire slides in text in a link. Instead, you can add anchor links with an icon or something designed to serve as anchors. Wrapping the whole thing in a link causes LOTS of needless narration for screen reader users.
+
+		 -->
+
+		<h1>Slides to HTML</h1>
+
+		<div class="narration">
+			<video id="video1" controls width="1280" height="720">
+			  <source src="Gift-Cards-AI.mp4" type="video/mp4">
+			  Your browser does not support this type of video.
+			</video>
+		</div>
+
+		<!--
+			@note These provide a way for folks to get anchor links to a specific slide WITHOUT announcing the entire slide text to screen reader users
+			The text of the aria-hidden attribute hides the link from screen readers
+		 -->
+		<h2>
+			Gift Cards
+			<a class="anchor-link" aria-hidden="true" href="#slide-1">#</a>
+		</h2>
+
+		<figure class="slide" id="slide-1">
+
+			<!--
+				@note we use an empty alt="" attribute so that screen readers don't announce the image path name
+				Text is provided from the slide notes, so no additional alt text is necessary here
+			 -->
+			<div class="slide-img" id="slide-img-1">
+				<img alt="" src="images/slide17.SVG" width="800" height="450">
+			</div>
+
+			<figcaption class="slide-text" id="slide-text-1">
+				<!-- @note I have no strong opinions on this, but your use of data-attributes is a good choice -->
+				<span id="s1l1" class="line" data-section="slide1" data-type="narration" data-start="00.000" data-end="03.185">One of the product types in nopCommerce can be a Gift Card.</span>
+				<br />
+				<span id="s1l2" class="line" data-section="slide1" data-type="narration" data-start="03.186" data-end="05.433">Gift cards are used by Shoppers.</span>
+				<br />
+				<span id="s1l3" class="line" data-section="slide1" data-type="narration" data-start="05.434" data-end="08.319">Gift cards are created by Product Managers.</span>
+				<br />
+				<span id="s1l4" class="line" data-section="slide1" data-type="narration" data-start="08.320" data-end="11.027">Gift cards are managed by Order Managers.</span>
+			</figcaption>
+
+		</figure>
+
+
+		<!--
+			@note This is a repeat of above with new IDs and the comments removed
+			Hopefully, it gives you an idea of how multiple slides would look
+		 -->
+		<h2>
+			Gift Cards Workflow
+			<a class="anchor-link" aria-hidden="true" href="#slide-2">#</a>
+		</h2>
+
+		<figure class="slide" id="slide-2">
+
+			<div class="slide-img" id="slide-img-2">
+				<img alt="" src="images/slide17.SVG" width="800" height="450">
+			</div>
+
+			<figcaption class="slide-text" id="slide-text-2">
+				<span id="s1l5" class="line" data-section="slide2" data-type="narration" data-start="00.000" data-end="03.185">One of the product types in nopCommerce can be a Gift Card.</span>
+				<br />
+				<span id="s1l6" class="line" data-section="slide2" data-type="narration" data-start="03.186" data-end="05.433">Gift cards are used by Shoppers.</span>
+				<br />
+				<span id="s1l7" class="line" data-section="slide2" data-type="narration" data-start="05.434" data-end="08.319">Gift cards are created by Product Managers.</span>
+				<br />
+				<span id="s1l8" class="line" data-section="slide2" data-type="narration" data-start="08.320" data-end="11.027">Gift cards are managed by Order Managers.</span>
+			</figcaption>
+
+		</figure>
+
+
+	</main>
+
+</body>
+</html>
