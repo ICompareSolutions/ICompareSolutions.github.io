@@ -1,3 +1,12 @@
+function setVideoSize(size) {
+    const videoElements = document.getElementsByClassName('player-size');
+    const videoContainer = document.querySelector('.stay-at-top');
+    videoContainer.classList.remove('hide', 'small', 'medium');
+    videoContainer.classList.add(size);
+    video.style.width = '100%';
+    video.style.height = 'auto';
+}
+
 var isInViewport = function (elem) {
     var bounding = elem.getBoundingClientRect();
     return (
@@ -45,12 +54,3 @@ video1.addEventListener('timeupdate', function () {
         }
     }
 });
-
-function setVideoSize(size) {
-    const videoElements = document.getElementsByClassName('player-size');
-    const videoContainer = document.querySelector('.stay-at-top');
-    videoContainer.classList.remove('hide', 'small', 'medium');
-    videoContainer.classList.add(size);
-    video.style.width = '100%';
-    video.style.height = 'auto';
-}
